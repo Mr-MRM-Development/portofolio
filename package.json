@@ -1,0 +1,31 @@
+{
+  "name": "OMERIZ",
+  "version": "1.0.0",
+  "description": "Ini Adalah Aplikasi EVOS (Emulator Virtual Operating System) Yang Bertujuan Untuk Merasakan Emulator Virtual Seperti Sistem Operasi.",
+  "keywords": [],
+  "license": "ISC",
+  "author": "Trinity Development",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.trinity.OMERIZ",
+    "productName": "OMERIZ",
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "devDependencies": {
+    "electron": "^34.0.0-beta.11",
+    "electron-builder": "^26.0.12"
+  },
+  "productName": "OMERIZ",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "cheerio": "^1.1.0",
+    "electron-package": "^0.1.0"
+  }
+}

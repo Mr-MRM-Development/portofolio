@@ -1,0 +1,14 @@
+{
+    "Refresh":{
+        "title": "Refresh",
+        "function": "menu('refresh')"
+    },
+    "User":{
+        "title": "User",
+        "function": "menu('user')"
+    },
+    "Settings":{
+        "title": "Settings",
+        "function": "menu('settings')"
+    }
+}

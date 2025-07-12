@@ -1,0 +1,178 @@
+body {
+  background-color: #252585;
+  color: #e0e1dd;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
+.toolbar {
+  margin-bottom: 10px;
+}
+
+.file-manager-container {
+  display: flex;
+  border: 1px solid #adadad;
+  background-color: #4545da;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 80vh;
+}
+
+.sidebar {
+  width: 20vw;
+  height: 80vh;
+  border-right: 1px solid #adadad;
+  padding: 10px 2px;
+  overflow: scroll;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.sidebar li {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 3px;
+  margin: 2px 0;
+}
+
+.sidebar li:hover {
+  background-color: #5555da;
+  color: #fff;
+}
+
+.sidebar li.expanded::before {
+  content: "▼ ";
+}
+.sidebar li:not(.expanded)::before {
+  content: "▶ ";
+}
+
+/* Treeview dan List View preformatted */
+.sidebar li, .file-name {
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.file-item:hover {
+  background-color: #5555da;
+  color: #fff;
+}
+
+.file-item {
+  cursor: pointer;
+  width: auto;
+  overflow-x: hidden;
+  font-size: 12px;
+  height: 50px;
+  width: 50px;
+}
+
+/* Font Size Dinamis */
+.file-name {
+  max-width: 100px;
+  font-size: 12px;
+}
+
+.file-name.short {
+  max-width: 50px;
+  font-size: 12px;
+}
+
+/* Double Click Transition Tetap Aktif */
+.file-item:active {
+  opacity: 0.7;
+}
+
+
+.file-list {
+  max-height: 80vh;
+  flex-grow: 1;
+  width: 25vw;
+  padding: 10px;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  gap: none;
+  justify-content: top;
+  align-content: flex-start;
+}
+
+/* Default View: Normal */
+.file-list[data-view="normal"] .file-item {
+  display: block;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 3px 0;
+}
+
+/* Details View */
+.file-list[data-view="details"] .file-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #415a77;
+  padding: 4px 0;
+}
+
+/* Icon View */
+.file-list[data-view="icon"] .file-item,
+.file-list[data-view="large-icon"] .file-item {
+  flex-direction: column;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+
+.file-list[data-view="large-icon"] .file-item {
+  width: 75px;
+  height: 75px;
+}
+
+.file-icon {
+  font-size: 24px;
+}
+
+.file-list[data-view="large-icon"] .file-icon {
+  font-size: 40px;
+}
+
+.file-name {
+  text-align: center;
+  margin-top: 5px;
+  word-break: break-word;
+}
+
+/* Scrollbar Custom */
+.file-list::-webkit-scrollbar, .sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.file-list::-webkit-scrollbar-thumb, .sidebar::-webkit-scrollbar-thumb {
+  background-color: #4545ff;
+  border-radius: 5px;
+  border: solid 1px #adadad;
+}
+
+.file-list::-webkit-scrollbar-track, .sidebar::-webkit-scrollbar-track {
+  background-color: none;
+}
+
+@media (max-width: 720px) {
+  .sidebar{
+    width: 25vw;
+  }
+}
+
+@media (max-width: 300px) {
+  .sidebar{
+    width: 75vw;
+  }
+}

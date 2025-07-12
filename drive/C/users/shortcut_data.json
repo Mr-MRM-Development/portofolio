@@ -1,0 +1,22 @@
+{
+  "Shortcut Setuper": {
+    "appPath": "drive/C/system_32/shortcut_setuper/index.html",
+    "iconPath": "drive/C/system_32/shortcut_setuper/icon.png"
+  },
+  "File Exploler": {
+    "appPath": "drive/C/system_32/file_exploler/index.html",
+    "iconPath": "drive/C/system_32/file_exploler/assets/icon.png"
+  },
+  "Terminal": {
+    "appPath": "drive/C/system_32/terminal/index.html",
+    "iconPath": "drive/C/system_32/terminal/icon.png"
+  },
+  "Browser": {
+    "appPath": "drive/C/system_32/browser/index.html",
+    "iconPath": "drive/C/system_32/browser/icon.png"
+  },
+  "Google": {
+    "appPath": "https://www.google.com/",
+    "iconPath": "drive/D/online_app/google.png"
+  }
+}

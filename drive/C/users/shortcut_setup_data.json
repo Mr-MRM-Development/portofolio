@@ -1,0 +1,38 @@
+{
+  "Shortcut Setuper": {
+    "appPath": "drive/C/system_32/shortcut_setuper/index.html",
+    "iconPath": "drive/C/system_32/shortcut_setuper/icon.png"
+  },
+  "Shortcut Setuper Data": {
+    "appPath": "drive/C/system_32/shortcut_setuper_data/index.html",
+    "iconPath": "drive/C/system_32/shortcut_setuper_data/icon.png"
+  },
+  "File Exploler": {
+    "appPath": "drive/C/system_32/file_exploler/index.html",
+    "iconPath": "drive/C/system_32/file_exploler/assets/icon.png"
+  },
+  "Notepad": {
+    "appPath": "drive/C/program_file/notepad/index.html",
+    "iconPath": "drive/C/program_file/notepad/icon.png"
+  },
+  "Browser": {
+    "appPath": "drive/C/system_32/browser/index.html",
+    "iconPath": "drive/C/system_32/browser/icon.png"
+  },
+  "Terminal": {
+    "appPath": "drive/C/system_32/terminal/index.html",
+    "iconPath": "drive/C/system_32/terminal/icon.png"
+  },
+  "Google": {
+    "appPath": "https://www.google.com/",
+    "iconPath": "drive/D/online_app/google.png"
+  },
+  "OMERIZ Video": {
+    "appPath": "drive/C/program_file/omeriz_video/index.html",
+    "iconPath": "drive/C/program_file/omeriz_video/icon.png"
+  },
+  "Bubble Shooter": {
+    "appPath": "drive/C/program_file/bubble_shooter/index.html",
+    "iconPath": "drive/C/program_file/bubble_shooter/icon.png"
+  }
+}

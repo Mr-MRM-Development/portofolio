@@ -1,0 +1,41 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+.app-header{
+    padding: 3px;
+    background: #232323;
+    -webkit-app-region: drag;
+    text-align: right;
+}
+
+.app-header .close{
+    -webkit-app-region: nodrag;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: #fd2222;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+}
+
+table input {
+    width: 100%;
+}
+
+table h1 {
+    text-align: center;
+}
+
+button {
+    padding: 12px;
+    width: 90vw;
+    margin: 6px 5vw;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop</title>
+    <link rel="stylesheet" href="local_system/css/desktop_style.css">
+</head>
+<body>
+    <div id="desktop">
+        <button onclick="open_app_sidebar()" title="Open Application Sidebar" class="open-app-sidebar-button"></button>
+        <button onclick="open_start_sidebar()" title="Open Start Sidebar" class="open-start-sidebar-button"></button>
+        
+        <div class="app-sidebar hide">
+            <button onclick="hide_app_sidebar()" class="hide-app-sidebar-button">X</button>
+            <div id="app-sidebar-box">
+
+            </div>
+        </div>
+
+        <div class="start-sidebar hide">
+            <button onclick="hide_start_sidebar()" class="hide-start-sidebar-button">X</button>
+            <div id="search-box">
+
+            </div>
+            <div class="power-box">
+                <button class="power" onclick="window.location = 'shutdown.html'">Shutdown</button>
+                <button class="power" onclick="">Restart</button>
+                <button class="power" onclick="">Sleep</button>
+            </div>
+        </div>
+
+        <div class="clock-box">
+            <h1 id="clock" class="clock">00 : 00 : 00</h1>
+            <h5 id="date" class="date"></h5>
+            <!-- <a href="shutdown.html">Shutdown</a> -->
+        </div>
+
+        <div class="bottom-right-box">
+            <img id="network-icon">
+        </div>
+
+        <div class="context-menu hide" id="context-menu">
+            
+        </div>
+    </div>
+    <div id="taskbar">
+        <button class="shortcut" data-app="drive/C/system_32/file_exploler/index.html">
+            <img src="drive/C/system_32/file_exploler/assets/icon.png">
+        </button>
+        <button class="shortcut" data-app="drive/C/system_32/notepad/index.html">
+            <img src="drive/C/system_32/notepad/icon.png">
+        </button>
+        <button class="shortcut" data-app="drive/C/system_32/shortcut_setuper/index.html">
+            <img src="drive/C/system_32/shortcut_setuper/icon.png">
+        </button>
+    </div>
+    <!-- <img src="drive/C/system_32/file_exploler/index.html" alt=""> -->
+
+
+    <script src="local_system/desktop_setup.js"></script>
+    <script src="local_system/context_menu_setup.js"></script>
+    <script src="local_system/network_setup.js"></script>
+    <script src="local_system/app_side_function.js"></script>
+    <script src="local_system/start_side_setup.js"></script>
+    <script src="local_system/clock_setup.js"></script>
+    <script src="local_system/menu_function.js"></script>
+    <script src="local_system/app_side_setup.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+body, html{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #151567;
+}
+
+h1 {
+    margin: auto;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 img {
+    width: 25vw;
+    height: auto;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+header{
+    background: #252585;
+    border-bottom: solid 1px #adadad;
+    padding: 3px 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.navbar{
+    background: #4545d560;
+    border-top: solid 1px #adadad;
+    padding: 3px 12px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+}
+
+.navbar input[type="range"]{
+    height: 3%;
+    width: 100%;
+    margin: 0;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #252575;
+    border-radius: 6px;
+    border: solid 1px #adadad;
+}
+ 
+input[type="range"]::-webkit-slider-thumb {
+    height: 5px;
+    background: #151567;
+}
+
+input[type="range"]::-moz-range-track{
+    background: none;
+}
+
+input[type="range"]::-moz-range-progress{
+    background: #671515;
+}
+
+.navCount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navCount .center{
+    width: 100%;
+}
+
+.navCount .center .circle{
+    font-size: 15px;
+    display: inline-flex;
+    font-family: cursive;
+    width: 30px;
+    height: 30px;
+    margin: 0 6px;
+    padding: 6px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+.play {
+    border: solid 6px #ffee00;
+    background: #ee9900;
+}
+
+.pause {
+    border: solid 6px #4545ff;
+    background: #2525ff;
+}
+
+.stop {
+    border: solid 6px #ff4545;
+    background: #ee2525;
+}
+
+header button {
+    background: #4545ff;
+    color: #fff;
+    padding: 3px 12px;
+    margin: 0 3px;
+    border: none;
+    border-radius: 6px;
+}

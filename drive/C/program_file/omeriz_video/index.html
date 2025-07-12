@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMERIZ Video</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <input type="file" id="url" hidden>
+        <button onclick="open_file()">Open</button>
+        <button onclick="dialog()">Dialog</button>
+    </header>
+
+    <h1><img src="icon.png" alt="OMERIZ Video"></h1>
+
+    <video src="" id="video-player">
+
+    </video>
+
+    <div class="navbar">
+        <input type="range" min="0" value="0" step="0.1" id="range">
+        <div class="navCount">
+            <div class="center">
+                <button title="Stop" onclick="system('stop')" class="circle stop"></button>
+                <button title="Play" onclick="system('play')" class="circle play"></button>
+                <button title="Pause" onclick="system('pause')" class="circle pause"></button>
+            </div>
+            <input id="volume" type="number" value="100"" step="1" max="100" min="0">
+        </div>
+    </div>
+
+    <script src="js/render.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
