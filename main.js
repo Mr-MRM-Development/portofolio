@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain, dialog} = require('electron');
 const path = require('path')
 const fs = require('fs');
+const sound = require("play-sound")({});
 // const axios = require('axios');
 // const cheerio = require('cheerio');
 const { request } = require('http');
@@ -23,8 +24,9 @@ function createWindow() {
     title: 'My App',
   });
 
-  win.setTitle('OS 1');
-  win.loadFile(path.join(__dirname, 'index.html'));
+  win.setTitle('OMERIZ');
+  // win.loadFile(path.join(__dirname, 'index.html'));
+  win.loadFile(path.join(__dirname, 'sign_in.html'));
 }
 
 app.whenReady().then(createWindow);
@@ -44,23 +46,34 @@ app.on('activate', () => {
 // Fungsi Untuk Menambahkan App-Container
 ipcMain.handle("open-app-window", (event, appPath) => {
   const dirPath = appPath.substring(0, appPath.lastIndexOf('/'));
+  let jsonData;
+  try {
+    const settingData = fs.readFileSync(dirPath + "/settings.json", 'Utf-8') || false;
+    jsonData = JSON.parse(settingData) || null;
+  } catch (no) {
+    jsonData = {};
+  }
+  
   const childWin = new BrowserWindow({
-    width: 600,
-    height: 400,
+    width: jsonData.width ?? 600,
+    height: jsonData.height ?? 400,
     parent: win,
-    modal: false,
-    hiddenInMissionControl: true,
-    frame: true,
+    modal: jsonData.modal ?? false,
+    fullscreen: jsonData.fullscreen ?? false,
+    hiddenInMissionControl: jsonData.hiddenInMissionControl ?? true,
+    frame: jsonData.frame ?? true,
     icon: dirPath + "/icon.png",
-    autoHideMenuBar: true,
-    disableAutoHideCursor: true,
+    autoHideMenuBar: jsonData.autoHideMenuBar ?? true,
+    resizable: jsonData.resizable ?? true,
+    maximizable: jsonData.maximizable ?? true,
+    minimizable: jsonData.minimizable ?? true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
     }
   });
 
-  if (appPath.startsWith('https://') || appPath.startsWith('http://')) {
+  if (appPath.startsWith('https://') || appPath.startsWith('http://') || appPath.startsWith("file://") || appPath.startsWith("localhost")) {
     childWin.loadURL(appPath);
   }else{
     childWin.loadFile(appPath);
@@ -92,7 +105,7 @@ ipcMain.handle("open-dialog-window", (event, folderPath, dialogHtml) => {
 
 // Fungsi Untuk Child Windows Custom
 ipcMain.handle("create-child-window", (event, system) => {
-  const { folderPath, appPath, property = {}, webPreferences = {} } = system;
+  const { folderPath, appPath, property = {}, webPreferences = {}, code} = system;
 
   const fullPath = `${folderPath}/${appPath}`;
 
@@ -129,8 +142,11 @@ ipcMain.handle("create-child-window", (event, system) => {
       ...PreferencesOther  // Properti tambahan di webPreferences
     }
   });
-
-  childWin.loadFile(fullPath);
+  if (code) {
+    childWin.loadURL("data:text/html;charset=utf-8,"+ encodeURIComponent(code));
+  }else{
+    childWin.loadFile(fullPath);
+  }
 });
 
 
@@ -156,12 +172,27 @@ ipcMain.handle('dialog', (event, request) => {
 // File Exploler System
 ipcMain.handle('FileExplorer', async (event, request) => {
   try {
-    const {method, folderPath, fileContent, fileName } = request;
+
+    // Standart Variable OS
+    const {
+      method, 
+      folderPath, 
+      fileContent, 
+      fileName, 
+      folderTargetPath
+    } = request;
+
     // Fungsi Jika Yang Di Pilih Fitur Read Folder
     if (method === 'readFolder') {
       const fullPath = path.join(__dirname, folderPath);
       const items = fs.readdirSync(fullPath);
       return{status: "success", data: items}
+    }
+
+    // Fungsi Jika Yang Di Pilih Make Folder
+    else if (method === "makeFolder" || method === "mkDir") {
+      const fullPath = path.join(__dirname, folderPath);
+      fs.mkdirSync(fullPath, {recursive: true})
     }
 
     // Fungsi Jika Yang Di Pilih Fitur Read File
@@ -191,6 +222,47 @@ ipcMain.handle('FileExplorer', async (event, request) => {
       fs.writeFileSync(fullPath, fileContent);
       return{status: "success"}
     }
+
+    // Fungsi Delete File
+    else if (method === "deleteFile" || method === "delFile") {
+      const fullPath = folderPath + "/" + fileName;
+      const trashPath = "drive/C/users/trash/" + fileName;
+      const source = path.join(__dirname, fullPath);
+      const destination = path.join(__dirname, trashPath);
+
+      try {
+        if (!fs.existsSync(path.dirname(destination))){
+          fs.mkdirSync(path.dirname(destination),{recursive: true});
+        }
+
+        fs.renameSync(source, destination);
+
+        return{status: "success", message: "Berhasil Di Hapus Ke Folder Trash"};
+      } catch (error) {
+        return{status: "error", message: error};
+      }
+    }
+
+    // Fungsi Copy File
+    else if (method === "copyFile") {
+      const fullPath = folderPath + "/" + fileName;
+      const fullTargetPath = folderTargetPath + "/" + fileName;
+      const source = path.join(__dirname, fullPath);
+      const targetPath = path.join(__dirname, fullTargetPath);
+
+      try {
+        if (!fs.existsSync(path.dirname(targetPath))){
+          fs.mkdirSync(path.dirname(targetPath),{recursive: true});
+        }
+
+        fs.copyFileSync(source, targetPath);
+
+        return{status: "success", message: "Berhasil Di Salin Ke Folder " + folderTargetPath};
+      } catch (error) {
+        return{status: "error", message: error};
+      }
+    }
+
 
     // Fungsi Jilka Permintaan Tidak Falid
     else{

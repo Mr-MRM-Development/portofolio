@@ -6,13 +6,20 @@ let bar = document.querySelector(".bar");
 
 let desktopLayer = document.querySelector(".desktopLayer");
 
+setTimeout(() => {
+        document.getElementById("sound").play();
+    }, 500
+);
+
+setTimeout(shutON, 500);
 
 function shutON() {
-    desktopLayer.classList.add("on");
     setTimeout(animasiTablet, 500);
 }
 
-setTimeout(shutON, 500);
+function shutOFF() {
+    desktopLayer.classList.add("on");
+}
 
 let proces = 0;
 
@@ -81,18 +88,21 @@ function animasiDesktop(){
 
 function updateBar(){
     bar.style.width = proces + "%";
-    
 }
 
 function addProcess(){
     proces += 10;
     
     if(proces >= 100){
-        window.close();
+        setTimeout(shutOFF, 500);
+        setTimeout(
+            window.location = "index.html", 200
+        )
     }
 }
 
 setInterval(updateBar, 30)
 
-setInterval(addProcess, 600)
+setInterval(addProcess, 300)
+
 

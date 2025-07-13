@@ -1,0 +1,109 @@
+body{
+    margin: 0%;
+    background: #252585;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+}
+
+nav{
+    background: #6565ff;
+    border-bottom: solid 1px #adadad;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    left: 0px;
+    right: 0px;
+    height: 25vh;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    overflow-x: scroll;
+}
+
+#app-box{
+    background: #4545ff;
+    border: solid 1px #adadad;
+    border-radius: 6px;
+    display: block;
+    left: 15px;
+    right: 15px;
+    height: 65vh;
+    overflow-y: scroll;
+    text-align: left;
+    position: absolute;
+    bottom: 15px;
+}
+
+#app-box button{
+    background: none;
+    border: none;
+    border-radius: 6px;
+    padding: 5px;
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+    transition: 0.3s;
+}
+
+#app-box button:hover {
+    background: #252585;
+}
+
+#app-box button img {
+    width: 50px;
+    height: 50px;
+}
+
+#app-box::-webkit-scrollbar, nav::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+#app-box::-webkit-scrollbar-thumb, nav::-webkit-scrollbar-thumb {
+  background-color: #4545ff;
+  border-radius: 5px;
+  border: solid 1px #adadad;
+}
+
+#app-box::-webkit-scrollbar-track nav::-webkit-scrollbar-track{
+  background-color: none;
+}
+
+td {
+    padding: 0;
+}
+
+nav .container{
+    background: #4545ff;
+    border: solid 1px #adadad;
+    border-radius: 6px;
+    padding: 12px;
+    margin: auto 12px;
+    display: block;
+}
+
+nav .container input{
+    background: #dadaff;
+    width: 200px;
+    padding: 6px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    margin: 6px 0;
+}
+
+nav .container button {
+    padding: 6px 0;
+    margin: 6px 0;
+    background: #6565ff;
+    color: #fff;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+.operation {
+    width: 200px;
+}

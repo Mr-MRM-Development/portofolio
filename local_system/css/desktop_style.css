@@ -295,3 +295,48 @@ body, html{
 .power-box button:hover {
     background: #4545ff;
 }
+
+.path-container{
+    background: #4545ff;
+    border-radius: 12px;
+    position: fixed;
+    top: 50px;
+    left: 35vw;
+    right: 35vw;
+    padding: 10px;
+}
+
+.path-container form {
+    display: flex;
+    width: 100%;
+}
+
+.path-container input{
+    background: #ddddff;
+    /* border: solid 1px #adadad; */
+    border: none;
+    padding: 6px 12px;
+    border-radius: 0;
+    width: 100%;
+    color: #000;
+    outline: none;
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+.path-container button {
+    background: #7575ff;
+    /* border: solid 1px #adadad; */
+    border: none;
+    padding: 6px 0;
+    border-radius: 0;
+    width: 20%;
+    color: #fff;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    transition: 0.3s;
+}
+
+.path-container button:hover {
+    background: #252585;
+}

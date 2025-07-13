@@ -1,0 +1,109 @@
+body {
+    color: #ddd;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-image: url("../../drive/C/system/desktop/wallpaper.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.desktopLayer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background: #000000a6;
+    position: absolute;
+    top: 0%;
+    transition: 0.3s;
+}
+
+.desktopLayer.on{
+    top: -200%;
+}
+
+.container{
+    text-align: center;
+    color: #ddd;
+}
+
+.loading-container{
+    display: block;
+    width: 200px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+.box, .foot, .foot-box,
+.box.tablet, .foot.tablet, .foot-box.tablet,
+.box.mobile, .foot.mobile, .foot-box.mobile
+{
+    transition: 0.3s;
+}
+
+
+.box, .box.desktop{
+    border: solid 8px #ddd;
+    border-radius: 6px;
+    height: 80%;
+    margin: auto;
+    background: #101010;
+}
+
+.foot-box.desktop{
+    background: #ddd;
+    width: 20%;
+    height: 20%;
+    margin: -3px auto;
+}
+
+.foot.desktop{
+    background: #ddd;
+    width: 50%;
+    height: 10px;
+    margin: -3px auto;
+}
+
+.foot.tablet, .foot-box.tablet,
+.foot.mobile, .foot-box.mobile{
+    opacity: 0;
+    /* rotate: 360deg; */
+}
+
+.box.tablet{
+    border: solid 6px #ddd;
+    scale: 65%;
+    rotate: 90deg;
+    border-right: solid 18px #ddd;
+    height: 90%;
+}
+
+.box.mobile{
+    rotate: -90deg;
+    border: solid 6px #ddd;
+    border-left: solid 16px #ddd;
+    border-right: solid 10px #ddd;
+    height: 60%;
+    width: 75%;
+    scale: 50%;
+    margin: auto;
+}
+
+.bar-container{
+    padding: 5px;
+    background: #246;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px 0 #8888;
+}
+
+.bar{
+    background: #286;
+    height: 12px;
+    border-radius: 3px;
+    transition: 0.3s;
+}

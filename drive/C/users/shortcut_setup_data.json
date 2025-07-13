@@ -9,7 +9,11 @@
   },
   "File Exploler": {
     "appPath": "drive/C/system_32/file_exploler/index.html",
-    "iconPath": "drive/C/system_32/file_exploler/assets/icon.png"
+    "iconPath": "drive/C/system_32/file_exploler/icon.png"
+  },
+  "Application Manager": {
+    "appPath": "drive/C/system_32/app_manager/index.html",
+    "iconPath": "drive/C/system_32/app_manager/icon.png"
   },
   "Notepad": {
     "appPath": "drive/C/program_file/notepad/index.html",
@@ -34,5 +38,9 @@
   "Bubble Shooter": {
     "appPath": "drive/C/program_file/bubble_shooter/index.html",
     "iconPath": "drive/C/program_file/bubble_shooter/icon.png"
+  },
+  "Calculator": {
+    "appPath": "drive/C/program_file/calculator/index.html",
+    "iconPath": "drive/C/program_file/calculator/icon.png"
   }
 }

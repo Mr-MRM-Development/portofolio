@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shutdown</title>
-    <link rel="stylesheet" href="local_system/css/shutdown_style.css">
+    <link rel="stylesheet" href="local_system/css/sign_in_style.css">
 </head>
 <body>
     <div class="desktopLayer">
@@ -15,19 +15,16 @@
                 <div class="foot desktop"></div>
             </div>
     
-            <h1>Shutingdown <span>.</span></h1>
+            <h1>Sign In On <span>.</span></h1>
             <div class="bar-container">
                 <div class="bar"></div>
             </div>
         </div>
     </div>
-    <audio src="drive/C/system/system_sound/sign_out.mp3" id="sound"></audio>
+    <audio src="drive/C/system/system_sound/sign_in.mp3" id="sound"></audio>
 
-    <script src="local_system/shutdown.js"></script>
+    <script src="local_system/sign_in.js"></script>
     <script>
-        setTimeout(() => {
-            document.getElementById("sound").play();
-        }, 500);
     </script>
 </body>
 </html>

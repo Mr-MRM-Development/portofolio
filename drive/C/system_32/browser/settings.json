@@ -4,7 +4,7 @@
     "version" : "1.0.0",
     "author" : "system",
     "frame": true,
-    "autoHideMenuBar": true,
+    "autoHideMenuBar": false,
     "width" : 600,
     "height": 400
 }

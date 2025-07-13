@@ -34,3 +34,4 @@ npm start
 ---
 &copy; 2025 M. Rizqy Mubarok | Trinity Development
 ---
+
