@@ -1,0 +1,47 @@
+.index {
+    background: #208050;
+}
+
+#main {
+    padding: 0;
+    gap: 12px;
+    display: flex;
+    width: 100%;
+}
+
+#main .sidebar {
+    background: #a5b5f5;
+    width: 25%;
+    padding: 12px;
+    margin: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+#main .mainContent {
+    width: 75%;
+    padding: 12px;
+    margin: 12px;
+}
+
+#main table * {
+    padding: 3px;
+}
+
+.productContainer {
+    width: 90%;
+    height: 90vh;
+    background: #f04040;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    padding: 12px;
+    background: #2040d0;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14pt;
+    border-top: solid 1px #adadff;
+}

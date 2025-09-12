@@ -1,0 +1,68 @@
+.card {
+    padding: 12px;
+    border-radius: 12px;
+    background: #fff;
+    border: none;
+    box-shadow: 12px 12px 6px 0 #2550d580;
+}
+
+.heading {
+    text-align: center;
+    margin: 6px 0;
+}
+
+.menuButton {
+    padding: 3px 6px;
+    background: none;
+    margin: 3px 0;
+    color: #0040d0;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.menuButton:hover {
+    background: #0040d0;
+    color: #ffffff;
+}
+
+.hoverSpin {
+    transition: 1.5s;
+}
+
+.hoverSpin:hover {
+    rotate: 360deg x;
+}
+
+.circle {
+    border-radius: 100%;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.fullWin {
+    width: 100%;
+    height: 100vh;
+    padding: 12px;
+}
+
+.title {
+    margin: 6px 0;
+    color: #ffffff;
+    font-family: cursive;
+}
