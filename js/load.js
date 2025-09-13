@@ -10,6 +10,7 @@ function loadTemplates() {
             <h3 class="heading">${item.name}</h3>
             <p>${item.description}</p>
             <a href="${item.link}" target="_blank" class="menuButton">Goto Pages</a>
+            <a href="${item.download}" download class="menuButton">Download Templates</a>
         </div>`;
         
         templateList.innerHTML += card;
