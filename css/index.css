@@ -2,6 +2,11 @@
     background: #208050;
 }
 
+.photoprofile {
+    width: 300px;
+    height: 300px;
+}
+
 #main {
     padding: 0;
     gap: 12px;
