@@ -1,0 +1,256 @@
+/* Root Variable */
+
+:root {
+    /* Color and Background */
+    --background1: #ffffff;
+    --background2: #90adff;
+    --background3: #0055ff;
+    --primary1: #0080f0;
+    --primary2: #0525d5;
+    --primary3: #2040d0;
+    --primary4: #2060f0;
+    --primary5: #d05030;
+    --color1: #ffffff;
+    --color2: #000000;
+    --color3: #002080;
+    --border: #adadff;
+    --invisible1: #00208080;
+
+    /* Font */
+    --font1: arial;
+    --font2: cursive;
+}
+
+
+/* Boot Style */
+.full {
+    width: 100vw;
+    height: 100vh;
+}
+
+.cover {
+    color: var(--color1);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary2);
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.description-container {
+    background: var(--primary3);
+    color: var(--color1);
+}
+
+.card {
+    background: var(--background1);
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 12px 12px 6px 0 var(--invisible1);
+    color: var(--color2);
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.title {
+    color: var(--color1);
+    font-family: var(--font2);
+}
+
+.heading {
+    color: var(--color2);
+    font-family: var(--font1);
+    text-align: center;
+}
+
+.description {
+    margin: 12px 0;
+    text-align: justify;
+    text-indent: 50px;
+    font-size: 10pt;
+}
+
+.linkButton {
+    background: var(--primary1);
+    border: none;
+    border-radius: 6px;
+    color: var(--color1);
+    transition: 0.3s;
+    padding: 12px;
+    width: 100%;
+}
+
+.linkButton:hover {
+    background: var(--background2);
+    color: var(--color3);
+    cursor: pointer;
+}
+
+.fixed-top,
+.fixed-bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+.fixed-top {top: 0;}
+.fixed-bottom {bottom: 0;}
+
+.hover-spin-x, 
+.hover-spin-y, 
+.hover-spin-z 
+{
+    transition: 1s;
+}
+
+.hover-spin-x:hover {
+    rotate: 360deg x;
+}
+
+.hover-spin-y:hover {
+    rotate: 360deg y;
+}
+
+.hover-spin-z:hover {
+    rotate: 360deg;
+}
+
+
+/* Main Style */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font1);
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background3);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    background: var(--primary4);
+    color: var(--color1);
+    padding: 12px 25px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+header img {
+    width: 100px;
+}
+
+header .void {
+    width: 100px;
+    height: 100%;
+}
+
+header .headerTitle {
+    width: 100%;
+    text-align: center;
+}
+
+nav {
+    background: var(--primary3);
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    padding: 6px 12px;
+    color: var(--color1);
+    font-family: var(--font1);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: var(--background2);
+    color: var(--color2);
+}
+
+.idCard {
+    display: flex;
+}
+
+.idCard img {
+    width: 200px;
+    border-radius: 12px;
+}
+
+.idCard .idContainer {
+    width: 500px;
+    height: 100%;
+    text-align: left;
+    padding: 12px 25px;
+}
+
+.idCard .idContainer h1{
+    margin-bottom: 12px;
+}
+
+.descriptionCard {
+    width: 75%;
+    padding: 25px;
+}
+
+.descriptionCard h1 {
+    margin-bottom: 12px;
+}
+
+.descriptionCard p {
+    text-align: justify;
+    margin: 12px 0;
+    text-indent: 50px;
+}
+
+.productList {
+    width: 75%;
+    height: 75%;
+    background: var(--primary1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    overflow: scroll;
+    justify-content: center;
+}
+
+.productList::-webkit-scrollbar {
+    display: none;
+}
+
+.productList .item {
+    flex: 1 1 calc(250px -12px);
+    width: 250px;
+    height: auto;
+}
+
+.productList .item img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+footer {
+    padding: 12px;
+    text-align: center;
+    font-size: 14pt;
+    border-top: solid 1px var(--border);
+    background: var(--primary4);
+    color: var(--color1);
+}
